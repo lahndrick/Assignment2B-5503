@@ -1,12 +1,15 @@
-import express from "express";
-import cors from "cors";
-import bodyParser from "body-parser";
-import mongoose from "mongoose";
+require("dotenv").config();
+const express = require('express');
+const connectDB = require('./config/database');
+const PORT = process.env.PORT || 3001;
 
-import { PORT } from "./config.js";
+
 
 const app = express();
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-    });
+// Connect Database
+connectDB();
+
+app.get('/', (req, res) => res.send('Hello world!'));
+
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
