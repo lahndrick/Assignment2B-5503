@@ -1,15 +1,11 @@
-require("dotenv").config();
-const express = require('express');
-const connectDB = require('./config/database');
-const PORT = process.env.PORT || 3001;
+const express = require('express')
 
+const app = express()
 
+require('dotenv').config()
 
-const app = express();
+app.use(express.json())
 
-// Connect Database
-connectDB();
+const connectDB = require('./connectMongo')
 
-app.get('/', (req, res) => res.send('Hello world!'));
-
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+connectDB()
