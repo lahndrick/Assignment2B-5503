@@ -5,6 +5,13 @@ const app = express()
 require('dotenv').config()
 
 app.use(express.json())
+app.use(
+    cors(
+        {
+            origin: "*",
+        }
+    )
+)
 app.use(router);
 
 const connectDB = require('./connectMongo')
