@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Article = require('../Models/articleSchema');
 
-// Route for creating a new article
-
+//route for creating a new article
 router.post('/', async (req, res) => {
   try {
     const {
@@ -32,7 +31,6 @@ router.post('/', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
-
 
 // Route for getting all articles
 router.get('/', async (req, res) => {
