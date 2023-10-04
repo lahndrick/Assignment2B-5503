@@ -33,4 +33,14 @@ router.post('/', async (req, res) => {
 });
 
 
+// Route for getting all articles
+router.get('/', async (req, res) => {
+  try {
+    const articles = await Article.find();
+    res.status(200).json({ articles });
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 module.exports = router;
