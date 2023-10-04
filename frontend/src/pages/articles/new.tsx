@@ -24,10 +24,12 @@ const NewDiscussion = () => {
                 linkedDiscussion,
             });
             console.log("Article created successfully:", response.data.message);
+
             // todo: Optionally, you can redirect the user or perform other actions here
         } catch (error) {
             console.error("Error creating article:", error);
             // todo:Handle error, display a message to the user, or perform other actions
+
         }
     };
     // Some helper methods for the authors array

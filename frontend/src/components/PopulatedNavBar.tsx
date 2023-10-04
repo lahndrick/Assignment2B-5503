@@ -22,6 +22,7 @@ const PopulatedNavBar = () => {
         <NavDropdown>
         <NavItem route="/login">Login</NavItem>
         <NavItem route="/createAccount">Create user</NavItem>
+
         </NavDropdown>
       </NavItem>
     </NavBar>

@@ -1,6 +1,4 @@
-const mongoose = require('mongoose')
-
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose');
 
 const articleSchema = new Schema({
     author: {
@@ -40,11 +38,10 @@ const articleSchema = new Schema({
         type: [Number]
     },
     semethod:{
-        type: String
+        type: String      
     }
-})
 
 const Article = mongoose.model('Article', articleSchema);
 
-module.exports = Article;
 
+module.exports = Article;
