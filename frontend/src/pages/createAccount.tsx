@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import formStyles from "../styles/Form.module.scss";
+import formStyles from "../../styles/Form.module.scss";
 
 export default function CreateAccount() {
     const [formData, setFormData] = useState({
@@ -36,6 +36,7 @@ export default function CreateAccount() {
                 body: JSON.stringify(formData),
             });
 
+            //200 is successful
             if (response.ok) {
                 // Account created successfully, handle the response or navigate to the next page.
                 console.log('Account created successfully');
