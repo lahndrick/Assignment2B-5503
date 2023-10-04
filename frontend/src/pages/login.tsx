@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import formStyles from '../../styles/Form.module.scss';
+import formStyles from '../../styles/login.module.scss';
+
 
 export default function Login() {
     const [formData, setFormData] = useState({
@@ -28,13 +29,16 @@ export default function Login() {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:5000/creat-account', {
+            const response = await fetch('http://localhost:5000/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(formData),
             });
+
+            const data = await response.json();
+            console.log(data);
 
             if (response.ok) {
                 // Login successful, handle the response or navigate to the next page.
