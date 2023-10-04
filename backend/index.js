@@ -4,10 +4,7 @@ const connectDB = require('./connectMongo')
 const PORT = process.env.PORT || 5000
 const cors = require('cors')
 const bodyParser = require('body-parser');
-const article = require('./api/article')
-
-
-
+const articlesRouter = require('./api/article')
 const User = require('./Models/userSchema');
 const bcrypt = require('bcryptjs');
 
@@ -25,7 +22,7 @@ connectDB()
 app.get('/', (req, res) =>
     res.send(`Hello running on ${PORT}.`)
 )
-app.use('/api/article', article)
+app.use('/article', articlesRouter)
 
 
 
