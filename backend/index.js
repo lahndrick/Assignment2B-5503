@@ -4,6 +4,7 @@ const connectDB = require('./connectMongo')
 const PORT = process.env.PORT || 5000
 const cors = require('cors')
 const bodyParser = require('body-parser');
+const article= require('./api/article')
 
 const User = require('./Models/userSchema');
 const bcrypt = require('bcryptjs');
@@ -23,6 +24,8 @@ app.get('/', (req, res) =>
 )
 
 
+//API Routes
+app.use('/article',article)
 
 app.post('/createAccount', async (req, res) => {
     const { username, email, password } = req.body
@@ -31,7 +34,7 @@ app.post('/createAccount', async (req, res) => {
     const newUser = new User({
         username,
         email,
-        password,
+        password: await bcrypt.hash(password, 10)
     })
     try {
         newUser.save()
