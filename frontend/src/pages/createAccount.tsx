@@ -28,7 +28,7 @@ export default function CreateAccount() {
         e.preventDefault();
 
         try {
-            const response = await fetch('https://speedbackend.vercel.app', {
+            const response = await fetch('http://localhost:5000/createAccount', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
