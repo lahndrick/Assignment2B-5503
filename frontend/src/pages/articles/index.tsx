@@ -40,7 +40,7 @@ const Articles: NextPage<ArticlesProps> = ({ articles }) => {
 export const getStaticProps: GetStaticProps<ArticlesProps> = async () => {
     try {
         // Make an API call to your backend to fetch articles
-        const response = await axios.get("http://localhost:5000/article");
+        const response = await axios.get("https://speedbackend.vercel.app/article");
         const articles: ArticlesInterface[] = response.data.articles;
 
         return {
