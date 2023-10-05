@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import formStyles from '../../styles/login.module.scss';
-import axios from "axios";
+import axios from 'axios';
 
 export default function Login() {
     const [formData, setFormData] = useState({
@@ -29,7 +29,7 @@ export default function Login() {
         e.preventDefault();
 
         try {
-             const response = await axios.get("https://speedbackend.vercel.app/login");, {
+             const response = await fetch('https://speedbackend.vercel.app', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
