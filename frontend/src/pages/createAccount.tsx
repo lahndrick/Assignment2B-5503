@@ -28,7 +28,7 @@ export default function CreateAccount() {
         e.preventDefault();
 
         try {
-            const response = await fetch('https://speedbackend.vercel.app/createAccount', {
+            const response = await fetch('https://speedbackend.vercel.app', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -36,7 +36,6 @@ export default function CreateAccount() {
                 body: JSON.stringify(formData),
             });
 
-            //200 is successful
             if (response.status == 201) {
                 // Account created successfully, handle the response or navigate to the next page.
                 console.log('Account created successfully');
