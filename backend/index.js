@@ -16,7 +16,7 @@ const bcrypt = require('bcryptjs');
 app.use(express.json())
 app.use(cors(
     {
-        origin: ["http://localhost:3000"],
+        origin: ["https://dev-lemon-iota.vercel.app"],
         methods: ["POST","GET"],
         credentials: true
     }
