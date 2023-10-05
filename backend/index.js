@@ -14,7 +14,14 @@ const bcrypt = require('bcryptjs');
 
 //middleware
 app.use(express.json())
-app.use(cors())
+app.use(cors(
+    {
+        origin: ["https://speedbackend.vercel.app/"],
+        methods: ["POST","GET"],
+        credentials: true
+    }
+    
+))
 app.use(bodyParser.json());
 
 connectDB()
