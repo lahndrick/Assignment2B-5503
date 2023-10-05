@@ -28,7 +28,7 @@ export default function Login() {
         e.preventDefault();
 
         try {
-            const response = await fetch('https://speedbackend.vercel.app', {
+            const response = await fetch('https://speedbackend.vercel.app/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
