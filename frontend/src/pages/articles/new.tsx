@@ -14,7 +14,7 @@ const NewDiscussion = () => {
         event.preventDefault();
 
         try {
-            const response = await axios.post("http://localhost:5000/article", {
+            const response = await axios.post("https://speedbackend.vercel.app/article", {
                 title,
                 authors,
                 source,
