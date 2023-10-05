@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import formStyles from '../../styles/login.module.scss';
-import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 export default function Login() {
     const [formData, setFormData] = useState({
@@ -25,6 +25,8 @@ export default function Login() {
         setFormData({ ...formData, [name]: value });
     };
 
+    const router = useRouter();
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -43,6 +45,7 @@ export default function Login() {
             if (response.ok) {
                 // Login successful, handle the response or navigate to the next page.
                 console.log('Login successful');
+                router.push('/articles'); 
             } else {
                 // Handle login error, e.g., display an error message to the user.
                 console.error('Login failed:', response.status, response.statusText);

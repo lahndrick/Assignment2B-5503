@@ -3,7 +3,8 @@ import NavBar from "./nav/NavBar";
 import NavDropdown from "./nav/NavDropdown";
 import NavItem from "./nav/NavItem";
 
-const PopulatedNavBar = () => {
+const PopulatedNavBar = ({username}) => {
+  const firstLetter = username ? username.charAt(0).toUpperCase() : "";
   return (
     <NavBar>
       <NavItem>SPEED</NavItem>
@@ -17,8 +18,8 @@ const PopulatedNavBar = () => {
           <NavItem route="/articles/new">Submit new</NavItem>
         </NavDropdown>
       </NavItem>
-      <NavItem dropdown route="/articles">
-        User <IoMdArrowDropdown />
+      <NavItem dropdown route="/login">
+        {firstLetter || 'User'} <IoMdArrowDropdown />
         <NavDropdown>
           <NavItem route="/login">Login</NavItem>
           <NavItem route="/createAccount">Create User</NavItem>

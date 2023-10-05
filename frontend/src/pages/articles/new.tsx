@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import formStyles from "../../../styles/Form.module.scss";
-import axios from "axios";
+import axios from 'axios';
 
 const NewDiscussion = () => {
     const [title, setTitle] = useState("");

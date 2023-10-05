@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import formStyles from "../../styles/login.module.scss";
+import { useRouter } from 'next/navigation';
 
 export default function CreateAccount() {
     const [formData, setFormData] = useState({
@@ -24,6 +25,8 @@ export default function CreateAccount() {
         setFormData({ ...formData, [name]: value });
     };
 
+    const router = useRouter();
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -39,6 +42,7 @@ export default function CreateAccount() {
             if (response.ok) {
                 // Account created successfully, handle the response or navigate to the next page.
                 console.log('Account created successfully');
+                router.push('/login');  
             } else {
                 // Handle error, e.g., display an error message to the user.
                 console.error('Account creation failed');
