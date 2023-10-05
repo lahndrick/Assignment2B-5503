@@ -16,7 +16,7 @@ const bcrypt = require('bcryptjs');
 app.use(express.json())
 app.use(cors(
     {
-        origin: ["https://speedbackend.vercel.app/"],
+        origin: ["https://dev-lemon-iota.vercel.app"],
         methods: ["POST","GET"],
         credentials: true
     }
