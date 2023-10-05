@@ -36,7 +36,7 @@ export default function CreateAccount() {
                 body: JSON.stringify(formData),
             });
 
-            if (response.status == 201) {
+            if (response.ok) {
                 // Account created successfully, handle the response or navigate to the next page.
                 console.log('Account created successfully');
             } else {
