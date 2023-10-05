@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import formStyles from "../../styles/login.module.scss";
-import axios from "axios";
 
 export default function CreateAccount() {
     const [formData, setFormData] = useState({
