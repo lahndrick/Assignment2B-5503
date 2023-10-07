@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import router, { useRouter } from 'next/router';
 import formStyles from '../../styles/login.module.scss';
 import axios from 'axios';
 
@@ -43,6 +44,7 @@ export default function Login() {
             if (response.ok) {
                 // Login successful, handle the response or navigate to the next page.
                 console.log('Login successful');
+                router.push('/');
             } else {
                 // Handle login error, e.g., display an error message to the user.
                 console.error('Login failed:', response.status, response.statusText);

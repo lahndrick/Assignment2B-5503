@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import formStyles from "../../styles/login.module.scss";
+import router from 'next/router';
 
 export default function CreateAccount() {
     const [formData, setFormData] = useState({
@@ -39,6 +40,7 @@ export default function CreateAccount() {
             if (response.ok) {
                 // Account created successfully, handle the response or navigate to the next page.
                 console.log('Account created successfully');
+                router.push('/');
             } else {
                 // Handle error, e.g., display an error message to the user.
                 console.error('Account creation failed');
