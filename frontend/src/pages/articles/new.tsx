@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import formStyles from "../../../styles/Form.module.scss";
 import axios from "axios";
+import router from "next/router";
 
 const NewDiscussion = () => {
     const [title, setTitle] = useState("");
@@ -25,6 +26,8 @@ const NewDiscussion = () => {
             });
             console.log("Article created successfully:", response.data.message);
             // todo: Optionally, you can redirect the user or perform other actions here
+            //back to home page
+            router.push("/")
         } catch (error) {
             console.error("Error creating article:", error);
             // todo:Handle error, display a message to the user, or perform other actions

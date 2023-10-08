@@ -15,6 +15,13 @@ router.post('/', async (req, res) => {
       linkedDiscussion,
     } = req.body;
 
+    // Check if an article with the same DOI already exists
+    const existingArticle = await Article.findOne({ doi });
+
+    if (existingArticle) {
+      return res.status(400).json({ error: 'Article with this DOI already exists' });
+    }
+
     const article = new Article({
       title,
       authors,
